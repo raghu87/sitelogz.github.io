@@ -2,7 +2,7 @@
 async function init() {
   console.log("inside app.js");
   const sqlPromise = initSqlJs({
-    locateFile: file => `js/${file}`
+    locateFile: file => `lib/${file}`
   });
   const dataPromise = fetch("data/db.sqlite").then(res => res.arrayBuffer());
   const [SQL, buf] = await Promise.all([sqlPromise, dataPromise])
