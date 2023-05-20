@@ -1,6 +1,6 @@
+console.log("inside app.js", appName);
 
-async function init() {
-  console.log("inside app.js");
+async function readData() {
   const sqlPromise = initSqlJs({
     locateFile: file => `lib/${file}`
   });
@@ -25,4 +25,4 @@ async function init() {
   console.log( "Done" );
 }
 
-init();
+if(appName === "main") readData();
